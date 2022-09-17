@@ -1,0 +1,108 @@
+﻿@using SignUp_SignIn.Models
+@model User
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+
+        import "materialize-css/sass/components/variables";
+        import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+        * {
+            color: white;
+        }
+
+        $secondary-color: white;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        #p1 {
+            color: darkgrey;
+            font-size: 50px;
+        }
+
+        #p2 {
+            color: darkgrey;
+            font-size: 20px;
+           
+        }
+
+        #a1 {
+            text-decoration: none;
+            border: 1px solid;
+            border-radius: 40px;
+            padding: 0px;
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        i {
+            margin-top: 0px;
+        }
+
+
+
+
+
+
+
+        input, select, textarea {
+            color: black;
+        }
+
+        label.active {
+            color: black !important;
+        }
+
+        input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+            border-bottom: 1px solid black;
+            -webkit-box-shadow: 0 1px 0 0 black;
+            box-shadow: 0 1px 0 0 black;
+        }
+    </style>
+   
+</head>
+<body>
+    <br>
+    <p id="p1" class="center" style="font-family:sacramento">hub de musica</p>
+    <p id="p2" class="center" style="font-family:">Enter your credentials to sign in.</p><br>
+
+    <div class="center" id="centerSignIn" style="margin:auto;width:30%">
+        <form action="/User/Check" method="post">
+            <label asp-for="Username" style="float:left;font-size:15px;"></label>
+            <input asp-for="Username" required style=""><br><br>
+            <label asp-for="Password" style="float: left; font-size: 15px;"></label>
+            <input asp-for="Password" type="password" required style=""><br><br><br>
+            <input type="submit" value="Sign In" style="padding:9px;border:1px solid grey;background:white;border-radius:5px;"></input>
+        </form>
+        <font color="red"><p>Invalid credentials , enter again.</p></font>
+    </div>
+</body>
+</html>
